@@ -82,7 +82,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
-})
+
 
 
 
@@ -116,25 +116,6 @@ function loadGoogleMaps() {
     });
 }
 
-// Initialize the map
-async function initMap() {
-    await loadGoogleMaps();
-
-    // Initial map configuration
-    var mapOptions = {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-    };
-
-    // Create the map
-    map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
-
-    // Now that the map is initialized, you can execute the next code here
-    console.log('Map has been fully loaded. Next code can be executed.');
-}
-
-
-
 function toggleFullScreen() {
     var mapContainer = document.getElementById('map-container');
 
@@ -150,6 +131,23 @@ function toggleFullScreen() {
     // Resize the map to fit the new container size
     google.maps.event.trigger(map, 'resize');
     isFullScreen = !isFullScreen;
+}
+})
+// Initialize the map
+async function initMap() {
+    await loadGoogleMaps();
+
+    // Initial map configuration
+    var mapOptions = {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+    };
+
+    // Create the map
+    map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
+
+    // Now that the map is initialized, you can execute the next code here
+    console.log('Map has been fully loaded. Next code can be executed.');
 }
 
 // Initialize the map once the page has loaded
