@@ -100,5 +100,59 @@ function humbclick(){
   }
 }
 
+ // google map code 
+
+
+
+var map;
+var isFullScreen = false;
+
+// Create a promise that resolves when the Google Maps API has loaded
+function loadGoogleMaps() {
+    return new Promise(resolve => {
+        window.initMap = function () {
+            resolve();
+        };
+    });
+}
+
+// Initialize the map
+async function initMap() {
+    await loadGoogleMaps();
+
+    // Initial map configuration
+    var mapOptions = {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+    };
+
+    // Create the map
+    map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
+
+    // Now that the map is initialized, you can execute the next code here
+    console.log('Map has been fully loaded. Next code can be executed.');
+}
+
+
+
+function toggleFullScreen() {
+    var mapContainer = document.getElementById('map-container');
+
+    // Toggle full screen
+    if (!isFullScreen) {
+        mapContainer.style.height = '100vh';
+        mapContainer.style.width = '100%';
+    } else {
+        mapContainer.style.height = '400px';
+        mapContainer.style.width = '100%';
+    }
+
+    // Resize the map to fit the new container size
+    google.maps.event.trigger(map, 'resize');
+    isFullScreen = !isFullScreen;
+}
+
+// Initialize the map once the page has loaded
+document.addEventListener('DOMContentLoaded', initMap);
 
 
