@@ -1,164 +1,209 @@
-document.addEventListener("DOMContentLoaded", function() {
+<!DOCTYPE html>
+<html lang="en">
 
-    
-          // Call the function to add rows when needed
-          function updateFoodList() {
-            var tbody = document.getElementById("menuFoodlist");
-            
-            // Loop through the array and create rows
-            for (var i = tbody.children.length; i < dataArray.length; i++) {
-                var row = tbody.insertRow(i);
-                
-    
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                var cell4 = row.insertCell(3);
-                var cell5 = row.insertCell(4);
-    
-                cell1.innerHTML = '<img src="' + dataArray[i].image + '" alt="Food Image" style="width: 80px; height: 80px;">';
-                cell2.innerHTML = dataArray[i].name;
-                cell3.innerHTML = dataArray[i].price;
-                cell4.innerHTML = dataArray[i].details;
-                cell5.innerHTML =  '<button onclick="addToFavorites(' + i + ',this)">Add</button>';
-              
-            }
-        }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="fuddy.css" />
+    <script src="fuddy.js"></script>
+    <script src="newfuddy.js"></script>
+    <!-- icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASLL0Pb7vHCFPh5G3YijSowHw7Rw0pleI&libraries=places"></script> -->
 
-        updateFoodList();
-        
+    <title>Fuddy</title>
+</head>
 
-    //   function openMap(location) {
-    //     const mapElement = document.getElementById("map");
+<body>
+    <div class="container-fluid">
+        <section>
+        <header id="header">
+            <nav id="nav">
+                <a href="#" id="logo">Fuddy</a>
+                <ul id="dropcontent">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Menu">Menu</a></li>
+                    <li>  <a href="#About">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#Services">Services</a>
+                        <ul class="dropdown-content">
+                            <li><a href="Booktable.html" target="_blank">Find Food</a></li>
+                            <li><a href="#FoodVarious" >Food Various</a></li>
+                            <li><a href="#YourList">Bookmark</a></li>
+                            <li><a href="#SocialMedia">Social Media</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#YourList">Your list</a></li>
+                </ul>
+            </nav>
+            <!-- mobile navbar icon -->
+            <div id="humberger" onclick="humbclick()">
+                <div class="iconhumberger"></div>
+                <div class="iconhumberger"></div>
+                <div class="iconhumberger"></div>
+            </div>
+        </header>
+    </section>
+
+        <section id="Home">
+            <div class="container-fluid hero-section">
+                <div class=" row hero-content">
+                    <div class="col-sm-12 text-center">
+                        <h1><a href="BookTable.html" target="_blank">Find Food</a></h1>
+                        <p style="cursor: pointer; font-weight: 600;">In Nanded</p>
+                    </div>
+                    <!-- <div class="col-sm-6 text-center">
+                    <div class="playicon" id="forshadow">
+                <span class="material-symbols-outlined " onclick="Herovideo()">
+                    play_circle
+                    </span>   
+                </div>        
+                </div> -->
+                </div>
+            </div>
+            <div id="FoodVideo">
+                <span id="closebtnvideo" onclick="closebtnvideo()"><span class="material-symbols-outlined "
+                        style="font-size: 30px;">
+                        close
+                    </span>Close</span>
+                <iframe width="80%" height="600" src="https://www.youtube.com/embed/u6BOC7CDUTQ?si=pRBsx2VRWeG3cWow"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+        <section id="Menu">
+            <div class="background-container">
+                <div class="text-content">
+                    <p>Menu____________________</p>
+                    <h1>Check Our Most Searched foods</h1>
+                    <div class="row fooditems p-5">
+
+                        <div class="col-sm-12 text-start menutablefoodlist">
+                            <table id="menutablefoodlist">
+                                <thead>
+                                    <tr style="pointer-events: none;">
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Details</th>
+                                        <th>Add Your List</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="menuFoodlist"></tbody>
+                            </table>
+                        
+                    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="About">
+            <div class="scrollable-content">
+                <h2 class="text-start ">Why Choose We</h2>
+                <div class="row d-flex justify-content-space-evenly p-5">
+                    <div class="col-sm-6">
+                        <h4>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo quibusdam aut, quod corrupti
+                            fugiat blanditiis aperiam numquam assumenda doloremque. Animi quas quia nam non provident
+                            dolore rerum, cum sunt, corrupti aperiam facere pariatur. Cumque expedita sint quis optio
+                            laboriosam molestias nostrum et beatae voluptatem ipsam culpa, praesentium, tempore
+                            voluptates fuga.
+                        </h4>
+                    </div>
+                    <div class="col-sm-6  d-flex justify-content-center">
+                        <div id="aboutUsImg">
+                            <iframe width="580" height="400" src="https://www.youtube.com/embed/uY_xRVs0iL8?si=p-CPX0yWlfUfw7iy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Services">
+            <div class="row d-flex justify-content-center p-5">
+                <h2 class="text-start p-4">Our Services</h2>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2">Find Food</h2>
+                        <p>you can find your location based Restorents,Hotels and Thela</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2"> Food various</h2>
+                        <p>You can Find Vegeterian and Non Vegeterian and alos Pricing Renge</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2">Bookmark</h2>
+                        <p>You can Bookmark your favorite dish with location</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2">Social Media</h2>
+                        <p>You can Share dishes Photos and videos on Social Media as Instagram,Facebook and Snapchat
+                            exa.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
   
-    //     if (!mapElement) {
-    //       console.error("Element with ID 'map' not found.");
-    //       return;
-    //     }
-  
-    //     const map = new google.maps.Map(mapElement, {
-    //       center: location,
-    //       zoom: 12
-    //     });
-  
-    //     const marker = new google.maps.Marker({
-    //       position: location,
-    //       map: map,
-    //       title: "Food Location"
-    //     });
-    //   }
-    
-      // Call the function to initially load the data
+        <section id="Contact">
+            <div class="row p-3 d-flex justify-content-center contact-Us">
+                <h2 class="p-4">Contact Us</h2>
+                <div class="col-sm-6 d-flex justify-content-center  flex-column">
+                    <h3>Location: Nanded,Maharashtra</h3>
+                    <h3>Open Hours: 24/7</h3>
+                    <h3>Email: shaikhmagdum877@gmail.com</h3>
+                    <h3>Call: 8080981549</h3>
+                </div>
+                <div class="col-sm-6 contactInputs ">
+                    <div class="d-flex ContactName"> <input type="text" placeholder="Your Name " /> <input type="text"
+                            placeholder="Your Email"></div>
+                    <input type="text" placeholder="Subject"><br>
+                    <textarea type="text" placeholder="message"></textarea><br>
+                    <div class="text-center">
+                        <input type="button" value="Send Message">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-      // Optionally, you can set up a timer or other mechanisms
-      // to periodically update the data throughout the day
-      // For example, update the data every hour:
-      // setInterval(updateFoodList, 3600000);
+        <section id="YourList">
+            <div>
+                <h1>Your List </h1>
+                <table id="bookmarklist" class="pt-2 pb-2">
+                    <thead>
+                        <tr style="pointer-events: none;">
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Yourlist"></tbody>
+                </table>
+            </div>
+        </section>
 
-// hero button efect infinite
-//  function applyBoxShadow() {
-      
-//   shadwoicon = document.getElementById("forshadow");
+        <section>
+         <!-- Button to toggle full screen -->
+<button onclick="toggleFullScreen()">Toggle Full Screen</button>
 
-//  shadwoicon.style.boxShadow = '0 0 30px white, 0 0 50px white';
+<!-- Container for the map -->
+<div id="map-container" style="height: 400px;"></div>
+        </section>
+    </div>
+</body>
 
-//   setTimeout(function() {
-
-//       shadwoicon.style.boxShadow = 'none';
-
-//       setTimeout(applyBoxShadow, 4000);
-//   }, 4000);
-// }
-// applyBoxShadow();
-// scroll animation
- 
-window.addEventListener('scroll', function () {
-  var header = document.getElementById('header');
-  var scrollPosition = window.scrollY;
-
-  if (scrollPosition > 400) {
-      header.classList.add('scrolled');
-  } else {
-      header.classList.remove('scrolled');
-  }
-});
-
-})
-
-
-
-function humbclick(){
-  dropcontent = document.getElementById("dropcontent")
-  if( dropcontent.style.display == 'none'){
-    dropcontent.style.display = 'flex'
-    dropcontent.style.flexDirection = 'column'
-    dropcontent.style.justifyContent = 'center'
-    dropcontent.classList.toggle('show-menu');
-
-  }else{
-    dropcontent.style.display = 'none'
-
-  }
-}
-
-
-
-
-
-var map;
-var isFullScreen = false;
-
-// Create a promise that resolves when the Google Maps API has loaded
-function loadGoogleMaps() {
-    return new Promise(resolve => {
-        window.initMap = function () {
-            resolve();
-        };
-    });
-}
-
-// Initialize the map
-async function initMap() {
-    await loadGoogleMaps();
-
-    // Initial map configuration
-    var mapOptions = {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-    };
-
-    // Create the map
-    map = new google.maps.Map(document.getElementById('map-container'), mapOptions);
-
-    // Now that the map is initialized, you can execute the next code here
-    console.log('Map has been fully loaded. Next code can be executed.');
-}
-
-  function loadGoogleMapsScript() {
-    const script = document.createElement("script");
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyASLL0Pb7vHCFPh5G3YijSowHw7Rw0pleI&libraries=places&callback=initMap";
-    script.async = true;
-    document.head.appendChild(script);
-  }
-  // Call the function to load the Google Maps API
-  loadGoogleMapsScript();
-
-function toggleFullScreen() {
-    var mapContainer = document.getElementById('map-container');
-
-    // Toggle full screen
-    if (!isFullScreen) {
-        mapContainer.style.height = '100vh';
-        mapContainer.style.width = '100%';
-    } else {
-        mapContainer.style.height = '400px';
-        mapContainer.style.width = '100%';
-    }
-
-    // Resize the map to fit the new container size
-    google.maps.event.trigger(map, 'resize');
-    isFullScreen = !isFullScreen;
-}
-
-// Initialize the map once the page has loaded
-document.addEventListener('DOMContentLoaded', initMap);
+</html>
