@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         updateFoodList();
+        
 
     //   function openMap(location) {
     //     const mapElement = document.getElementById("map");
@@ -82,7 +83,7 @@ window.addEventListener('scroll', function () {
   }
 });
 
-
+})
 
 
 
@@ -100,7 +101,6 @@ function humbclick(){
   }
 }
 
- // google map code 
 
 
 
@@ -134,7 +134,14 @@ async function initMap() {
     console.log('Map has been fully loaded. Next code can be executed.');
 }
 
-
+  function loadGoogleMapsScript() {
+    const script = document.createElement("script");
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyASLL0Pb7vHCFPh5G3YijSowHw7Rw0pleI&libraries=places&callback=initMap";
+    script.async = true;
+    document.head.appendChild(script);
+  }
+  // Call the function to load the Google Maps API
+  loadGoogleMapsScript();
 
 function toggleFullScreen() {
     var mapContainer = document.getElementById('map-container');
