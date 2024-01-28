@@ -104,6 +104,7 @@ function humbclick(){
 
 
 
+
 var map;
 var isFullScreen = false;
 
@@ -116,23 +117,6 @@ function loadGoogleMaps() {
     });
 }
 
-function toggleFullScreen() {
-    var mapContainer = document.getElementById('map-container');
-
-    // Toggle full screen
-    if (!isFullScreen) {
-        mapContainer.style.height = '100vh';
-        mapContainer.style.width = '100%';
-    } else {
-        mapContainer.style.height = '400px';
-        mapContainer.style.width = '100%';
-    }
-
-    // Resize the map to fit the new container size
-    google.maps.event.trigger(map, 'resize');
-    isFullScreen = !isFullScreen;
-}
-})
 // Initialize the map
 async function initMap() {
     await loadGoogleMaps();
@@ -150,7 +134,24 @@ async function initMap() {
     console.log('Map has been fully loaded. Next code can be executed.');
 }
 
+
+
+function toggleFullScreen() {
+    var mapContainer = document.getElementById('map-container');
+
+    // Toggle full screen
+    if (!isFullScreen) {
+        mapContainer.style.height = '100vh';
+        mapContainer.style.width = '100%';
+    } else {
+        mapContainer.style.height = '400px';
+        mapContainer.style.width = '100%';
+    }
+
+    // Resize the map to fit the new container size
+    google.maps.event.trigger(map, 'resize');
+    isFullScreen = !isFullScreen;
+}
+
 // Initialize the map once the page has loaded
 document.addEventListener('DOMContentLoaded', initMap);
-
-
