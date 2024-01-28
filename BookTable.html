@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="fuddy.css"/>
+    <script src="fuddy.js"></script>
+    <script src="newfuddy.js"></script>
+
+
+    <title>Find FOOD</title>
+</head>
+<body>
+        <div class="container-fluid">
+            <div id="booktable-page">
+           <div class="Find-Food-Nav">
+            <div class="navbar-booktable">
+          <span>Find Food In Nanded</span><div id="mobile-Serch-input"><input id="searchInput" onkeydown="handleEnter(event)" type="text" placeholder="Search Food"><button  onclick="SearchFilter()">Search</button></div>
+           </div>
+           <h1 class="text-center pt-2 pb-3">Nanded Foods</h1>
+           <div class="SearchedFoods">
+           
+            <table id="myTable">
+              <thead>
+                  <tr style="pointer-events: none;">
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Details</th>
+                      <th>Add Your List</th>
+                  </tr>
+              </thead>
+              <tbody id="SerchedFoodList"></tbody>
+          </table>
+              </div>
+        </div>
+        </div>
+        </div>
+
+        <script>
+
+
+    function addRows() {
+    var tbody = document.getElementById("SerchedFoodList");
+    
+    // Loop through the array and create rows
+    for (var i = tbody.children.length; i < dataArray.length; i++) {
+        var row = tbody.insertRow(i);
+        
+    
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+    
+        cell1.innerHTML = '<img src="' + dataArray[i].image + '" alt="Food Image" style="width: 80px; height: 80px;">';
+        cell2.innerHTML = dataArray[i].name;
+        cell3.innerHTML = dataArray[i].price;
+        cell4.innerHTML = dataArray[i].details;
+        cell5.innerHTML =  '<button onclick="addToFavorites(' + i + ',this)">Add</button>';
+      
+    }
+}
+      
+        addRows(); 
+
+
+function handleEnter(event) {
+    if (event.key === "Enter") {
+        // Call your function here
+        SearchFilter();
+    }
+}
+
+function SearchFilter() {
+var searchInput = document.getElementById("searchInput").value.toLowerCase();
+var filteredArray = dataArray.filter(function (item) {
+    return item.name.toLowerCase().includes(searchInput);
+});
+updateTable(filteredArray);
+document.getElementById("searchInput").value = ""; // Clear the input value
+}
+
+function updateTable(filteredArray) {
+var tbody = document.getElementById("SerchedFoodList");
+
+// Clear existing rows
+tbody.innerHTML = "";
+
+// Insert filtered rows at the beginning
+for (var i = 0; i < filteredArray.length; i++) {
+var row = tbody.insertRow(i);
+
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+var cell4 = row.insertCell(3);
+var cell5 = row.insertCell(4); // Add Your List cell
+
+cell1.innerHTML = '<img src="' + filteredArray[i].image + '" alt="Food Image" style="width: 80px; height: 80px;">';
+cell2.innerHTML = filteredArray[i].name;
+cell3.innerHTML = filteredArray[i].price;
+cell4.innerHTML = filteredArray[i].details;
+cell5.innerHTML = '<button onclick="addToFavorites(' + i + ')">Add</button>';
+}
+
+// Add the remaining rows from the original array
+addRows();
+}
+
+
+
+        </script>
+</body>
+</html>

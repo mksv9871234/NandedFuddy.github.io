@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="fuddy.css" />
+    <script src="fuddy.js"></script>
+    <script src="newfuddy.js"></script>
+    <!-- icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- google map  -->
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>  -->
+    <title>Fuddy</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <section>
+        <header id="header">
+            <nav id="nav">
+                <a href="#" id="logo">Fuddy</a>
+                <ul id="dropcontent">
+                    <li><a href="#Home">Home</a></li>
+                    <li><a href="#Menu">Menu</a></li>
+                    <li>  <a href="#About">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#Services">Services</a>
+                        <ul class="dropdown-content">
+                            <li><a href="Booktable.html" target="_blank">Find Food</a></li>
+                            <li><a href="#FoodVarious" >Food Various</a></li>
+                            <li><a href="#YourList">Bookmark</a></li>
+                            <li><a href="#SocialMedia">Social Media</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#Contact">Contact</a></li>
+                    <li><a href="#YourList">Your list</a></li>
+                </ul>
+            </nav>
+            <!-- mobile navbar icon -->
+            <div id="humberger" onclick="humbclick()">
+                <div class="iconhumberger"></div>
+                <div class="iconhumberger"></div>
+                <div class="iconhumberger"></div>
+            </div>
+        </header>
+    </section>
+
+        <section id="Home">
+            <div class="container-fluid hero-section">
+                <div class=" row hero-content">
+                    <div class="col-sm-12 text-center">
+                        <h1><a href="BookTable.html" target="_blank">Find Food</a></h1>
+                        <p style="cursor: pointer; font-weight: 600;">In Nanded</p>
+                    </div>
+                    <!-- <div class="col-sm-6 text-center">
+                    <div class="playicon" id="forshadow">
+                <span class="material-symbols-outlined " onclick="Herovideo()">
+                    play_circle
+                    </span>   
+                </div>        
+                </div> -->
+                </div>
+            </div>
+            <div id="FoodVideo">
+                <span id="closebtnvideo" onclick="closebtnvideo()"><span class="material-symbols-outlined "
+                        style="font-size: 30px;">
+                        close
+                    </span>Close</span>
+                <iframe width="80%" height="600" src="https://www.youtube.com/embed/u6BOC7CDUTQ?si=pRBsx2VRWeG3cWow"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+        </section>
+        <section id="Menu">
+            <div class="background-container">
+                <div class="text-content">
+                    <p>Menu____________________</p>
+                    <h1>Check Our Most Searched foods</h1>
+                    <div class="row fooditems p-5">
+
+                        <div class="col-sm-12 text-start menutablefoodlist">
+                            <table id="menutablefoodlist">
+                                <thead>
+                                    <tr style="pointer-events: none;">
+                                        <th>Image</th>
+                                        <th>Name</th>
+                                        <th>Price</th>
+                                        <th>Details</th>
+                                        <th>Add Your List</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="menuFoodlist"></tbody>
+                            </table>
+                        
+                    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="About">
+            <div class="scrollable-content">
+                <h2 class="text-start ">Why Choose We</h2>
+                <div class="row d-flex justify-content-space-evenly p-5">
+                    <div class="col-sm-6">
+                        <h4>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo quibusdam aut, quod corrupti
+                            fugiat blanditiis aperiam numquam assumenda doloremque. Animi quas quia nam non provident
+                            dolore rerum, cum sunt, corrupti aperiam facere pariatur. Cumque expedita sint quis optio
+                            laboriosam molestias nostrum et beatae voluptatem ipsam culpa, praesentium, tempore
+                            voluptates fuga.
+                        </h4>
+                    </div>
+                    <div class="col-sm-6  d-flex justify-content-center">
+                        <div id="aboutUsImg">
+
+                            <img src="/img/bg.jpg" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="Services">
+            <div class="row d-flex justify-content-center p-5">
+                <h2 class="text-start p-4">Our Services</h2>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2">Find Food</h2>
+                        <p>you can find your location based Restorents,Hotels and Thela</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2"> Food various</h2>
+                        <p>You can Find Vegeterian and Non Vegeterian and alos Pricing Renge</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2">Bookmark</h2>
+                        <p>You can Bookmark your favorite dish with location</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card-body">
+                        <h2 class="pb-2">Social Media</h2>
+                        <p>You can Share dishes Photos and videos on Social Media as Instagram,Facebook and Snapchat
+                            exa.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+  
+        <section id="Contact">
+            <div class="row p-3 d-flex justify-content-center contact-Us">
+                <h2 class="p-4">Contact Us</h2>
+                <div class="col-sm-6 d-flex justify-content-center  flex-column">
+                    <h3>Location: Nanded,Maharashtra</h3>
+                    <h3>Open Hours: 24/7</h3>
+                    <h3>Email: shaikhmagdum877@gmail.com</h3>
+                    <h3>Call: 8080981549</h3>
+                </div>
+                <div class="col-sm-6 contactInputs ">
+                    <div class="d-flex ContactName"> <input type="text" placeholder="Your Name " /> <input type="text"
+                            placeholder="Your Email"></div>
+                    <input type="text" placeholder="Subject"><br>
+                    <textarea type="text" placeholder="message"></textarea><br>
+                    <div class="text-center">
+                        <input type="button" value="Send Message">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div>
+                <h1>Your List </h1>
+                <table id="bookmarklist" class="pt-2 pb-2">
+                    <thead>
+                        <tr style="pointer-events: none;">
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="Yourlist"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
