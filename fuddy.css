@@ -40,6 +40,23 @@ body {
     display: block;
     transform: translateY(0);
 }
+#mapbox{
+    display: none;
+    width: 100%;
+    height: 400px;
+    top: 100px;
+    z-index: 200;
+}
+#close{
+    width: 60px;
+    top: 60px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 201;
+}
 
 @media (max-width: 768px) {
 
