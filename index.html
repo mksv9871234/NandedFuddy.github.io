@@ -12,6 +12,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyASLL0Pb7vHCFPh5G3YijSowHw7Rw0pleI&libraries=places"></script> -->
+        <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBImvT743RvFKMlBojcnUHcsHjIc4paP0E&libraries=places"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBImvT743RvFKMlBojcnUHcsHjIc4paP0E&libraries=geometry"></script> -->
+
 
     <title>Fuddy</title>
 </head>
@@ -55,13 +58,6 @@
                         <h1><a href="BookTable.html" target="_blank">Find Food</a></h1>
                         <p style="cursor: pointer; font-weight: 600;">In Nanded</p>
                     </div>
-                    <!-- <div class="col-sm-6 text-center">
-                    <div class="playicon" id="forshadow">
-                <span class="material-symbols-outlined " onclick="Herovideo()">
-                    play_circle
-                    </span>   
-                </div>        
-                </div> -->
                 </div>
             </div>
             <div id="FoodVideo">
@@ -89,7 +85,7 @@
                                         <th>Image</th>
                                         <th>Name</th>
                                         <th>Price</th>
-                                        <th>Details</th>
+                                        <th>location</th>
                                         <th>Add Your List</th>
                                     </tr>
                                 </thead>
@@ -179,7 +175,7 @@
             </div>
         </section>
 
-        <section id="YourList">
+        <section>
             <div>
                 <h1>Your List </h1>
                 <table id="bookmarklist" class="pt-2 pb-2">
@@ -188,22 +184,22 @@
                             <th>Image</th>
                             <th>Name</th>
                             <th>Price</th>
-                            <th>Details</th>
+                            <th>location</th>
                         </tr>
                     </thead>
                     <tbody id="Yourlist"></tbody>
                 </table>
             </div>
         </section>
-
-        <section>
-         <!-- Button to toggle full screen -->
-<button onclick="toggleFullScreen()">Toggle Full Screen</button>
-
+        <section id="mapbox">
 <!-- Container for the map -->
+<button onclick="closemap()" id="close">X</button>
 <div id="map-container" style="height: 400px;"></div>
         </section>
     </div>
+
+
 </body>
 
 </html>
+
